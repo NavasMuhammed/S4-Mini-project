@@ -1,0 +1,186 @@
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Basic hotel booking form</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+  
+  
+      <link rel="stylesheet" href="/stylesheets/bookingcss.css">
+
+  
+</head>
+
+  
+  <body class="" style="background: #c993438f;">
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background: #FFCC80;">
+  <a class="navbar-brand" href="#">Hotel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signin">Login</a>
+      </li>
+    </ul></div>
+    
+     
+      <input class="form-control mr-sm-2" style="margin-left: 55rem;" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  
+  </div>
+</nav>
+
+  
+  
+ 
+
+<form action='/updateuser/:{{id}}' method="POST">
+
+  <!--  General -->
+  
+    <div class="form-group border border-secondary p-5 rounded-top bg-light">
+    <div class="controls">
+      <input type="number" id="id" class="floatLabel" name="id" value="{{id}}" readonly>
+      <label for="id">ID</label>
+    </div>
+  <div class="form-group">
+    <h2 class="heading">Booking & contact</h2>
+    <div class="controls">
+      <input type="number" id="roomno" class="floatLabel" name="roomno" value="{{customer.roomno}}" required>
+      <label for="roomno">Room No</label>
+    </div>
+    <div class="controls">
+      <input type="text" id="name" class="floatLabel" name="name" value="{{customer.name}}" required>
+      <label for="name">Name</label>
+    </div>
+    <div class="controls">
+      <input type="text" id="email" class="floatLabel" name="email" value="{{customer.email}}" required>
+      <label for="email">Email</label>
+    </div>       
+    <div class="controls">
+      <input type="tel" id="phone" class="floatLabel" name="phone" value="{{customer.phone}}" required>
+      <label for="phone">Phone</label>
+    </div>
+      <div class="grid">
+        <div class="col-2-3">
+          <div class="controls">
+           <input type="text" id="street" class="floatLabel" name="street" value="{{customer.street}}" required>
+           <label for="street">Street</label>
+          </div>          
+        </div>
+        <div class="col-1-3">
+          <div class="controls">
+            <input type="number" id="streetnumber" class="floatLabel" name="streetnumber" value="{{customer.streetnumber}}" required>
+            <label for="streetnumber">Street-Number</label>
+          </div>          
+        </div>
+      </div>
+      <div class="grid">
+        <div class="col-2-3">
+          <div class="controls">
+            <input type="text" id="city" class="floatLabel" name="city" value="{{customer.city}}" required>
+            <label for="city">City</label>
+          </div>         
+        </div>
+        <div class="col-1-3">
+          <div class="controls">
+            <input type="text" id="postcode" class="floatLabel" name="postcode" value="{{customer.postcode}}" required>
+            <label for="postcode">Post Code</label>
+          </div>         
+        </div>
+      </div>
+      <div class="controls">
+        <input type="text" id="country" class="floatLabel" name="country" value="{{customer.country}}" required>
+        <label for="country">Country</label>
+      </div>
+  </div>
+  <!--  Details -->
+  <div class="form-group">
+    <h2 class="heading">Details</h2>
+    <div class="grid">
+    <div class="col-1-4 col-1-4-sm">
+      <div class="controls">
+        <input type="date" id="arrive" class="floatLabel" name="arrive" value="{{customer.arrive}}" required>
+        <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Arrive</label>
+      </div>      
+    </div>
+    <div class="col-1-4 col-1-4-sm">
+      <div class="controls">
+        <input type="date" id="depart" class="floatLabel" name="depart" value="{{customer.depart}}"/ required>
+        <label for="depart" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Depart</label>
+      </div>      
+    </div>
+      </div>
+      <div class="grid">
+    <div class="col-1-3 col-1-3-sm">
+     <div class="controls">
+        <input type="number" id="person" class="floatLabel" name="person" value="{{customer.person}}" required>
+        <label for="person">person</label>
+      </div>    
+    </div>
+    <div class="col-1-3 col-1-3-sm">
+    <div class="controls">
+      <i class="fa fa-sort"></i>
+      <select class="floatLabel" name="room">
+        <option value="{{customer.room}}" selected>{{customer.room}}</option>
+        <option value="Standard">Standard</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Budget">Budget</option>
+      </select>
+      <label for="fruit">Room</label>
+     </div>     
+    </div>
+
+    <div class="col-1-3 col-1-3-sm">
+    <div class="controls">
+      <i class="fa fa-sort"></i>
+      <select class="floatLabel" name="bed">
+        <option value="{{customer.bedding}}" selected>{{customer.bedding}}</option>
+        <option value="single-bed">Single-Bed</option>
+        <option value="double-bed">Double-Bed</option>
+        <option value="triple-bed">Triple-Bed</option>
+        <option value="quad-bed">Quad-Bed</option>
+        <option value="king">King</option>
+        <option value="queen">Queen</option>
+        <option value="twin">Twin</option>
+
+      </select>
+      <label for="fruit">Bedding</label>
+     </div>     
+    </div>
+      
+     </div>
+      <div class="grid">
+        <p class="info-text">Please describe your needs e.g. Extra beds, children's cots</p>
+        <br>
+        <div class="controls">
+          <textarea name="comments" class="floatLabel" id="comments" placeholder="{{customer.comments}}"></textarea>
+          <label for="comments">Comments</label>
+          </div>
+            <button type="submit" value="Submit" class="col-1-4">Submit</button>
+      </div>  </div>
+  </div> <!-- /.form-group -->
+</form>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://raw.githubusercontent.com/andiio/selectToAutocomplete/master/jquery-ui-autocomplete.js'></script>
+<script src='http://raw.githubusercontent.com/andiio/selectToAutocomplete/master/jquery.select-to-autocomplete.js'></script>
+<script src='http://raw.githubusercontent.com/andiio/selectToAutocomplete/master/jquery.select-to-autocomplete.min.js'></script>
+
+  
+
+    <script  src="/javascripts/booking.js"></script>
+
+
+
+
+</body>
+
+</html>

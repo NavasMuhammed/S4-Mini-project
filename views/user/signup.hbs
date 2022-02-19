@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>sign up</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/signup.css" >
+</head>
+<body>
+	
+	
+	<div class="row">
+    <div class="col-md-6 mx-auto p-0">
+        <div class="card">
+            <div class="login-box">
+                <div class="login-snip"> 
+					
+					<label for="tab-2" class="tab">Sign Up</label>
+                    <div class="login-space">
+                       <form action="/signupaction" method="post">
+                        <div class="sign-up-form">
+                            <div class="group"> 
+                                <label for="user" class="label">Username</label> 
+                                <input name="username" id="user" type="text" class="input" placeholder="Create your Username"> 
+                            </div> 
+                            <div class="group"> 
+                                <label for="pass" class="label">Password</label> 
+                                <input name="password" onkeyup='check();' id="password" type="password" class="input" data-type="password" placeholder="Create your password"> 
+                            </div>
+                            <div class="group">
+                                 <label for="pass" class="label">Repeat Password</label> 
+                                 <input name="confirm_password" onkeyup='check();' id="confirm_password" type="password" class="input" data-type="password" placeholder="Repeat your password">
+                                 </div>
+                            <div class="group"> 
+                                <label for="email" class="label">Email Address</label> 
+                                <input name="Email" id="email" type="text" class="input" placeholder="Enter your email address"> 
+                            </div>
+                            <div class="group"> 
+                                <input name="" type="submit" class="button" value="Sign Up" onclick='checkfull();'> 
+                            </div>
+                            <div class="hr">
+								<span id="message"></span>
+
+                            </div>
+                            
+                        </div>
+						</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<script type="text/javascript">
+		var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+	var checkfull = function() {
+		if(!((document.getElementById('password').value)&&(document.getElementById('Email').value) && (document.getElementById('username').value))){
+			
+			 window.alert('Please Insert Every details')
+			 }
+			else{
+			
+		}
+	}
+  
+	</script>
+
+</body>
+
+</html>
